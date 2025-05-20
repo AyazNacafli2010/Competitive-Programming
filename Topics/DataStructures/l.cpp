@@ -5,7 +5,6 @@ using namespace std;
 void remax(int &a, int b) { 
 	a = max(a,b); 
 }
-using pii = pair<int,int>;
 template <typename T>
 using MnPq = priority_queue<T, vector<T>, greater<T>>;
 
