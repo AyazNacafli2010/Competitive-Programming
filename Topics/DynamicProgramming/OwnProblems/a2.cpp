@@ -1,3 +1,4 @@
+// C. Divisibility by Eight
 #include <bits/stdc++.h>
 #define isz(x) (int)(x.size())
 main() {
