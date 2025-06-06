@@ -15,11 +15,11 @@ void dfs(int u, int p) {
 		if (v == p) continue;
 		dfs(v, u);
 	}
-	tout[u] = ++t;
+	tout[u] = t;
 }
 void build(int l, int r, int v) {
 	if (l == r) {
-		st[v] = 0;
+		st[v] = 0ll;
 		return;
 	}
 	int mid = (l + r) / 2;
@@ -35,12 +35,12 @@ void update(int x,int l, int r, int val, int v) {
 		return;
 	}	
 	int mid = (l + r) / 2;
-	update(x, l, mid, 1, v<<1);
-	update(x, mid+1, r, 1, v<<1|1);
+	update(x, l, mid, val, v<<1);
+	update(x, mid+1, r, val, v<<1|1);
 	st[v] = st[v<<1] + st[v<<1|1];
 }	
 int get(int l,int r,int a, int b, int v) {
-	if (l > b || a > r) return 0;
+	if (l > b || a > r) return 0ll;
 	if (a <= l && r <= b) return st[v];
 	int mid = (l + r) / 2;
 	return get(l, mid, a, b, v<<1) + get(mid+1, r, a, b, v<<1|1);
@@ -62,7 +62,7 @@ void solve() {
 		g[u].push_back(v);
 		g[v].push_back(u);
 	}
-	t = 0; cnt = 0;
+	t = 0ll; cnt = 0ll;
 	dfs(1, -1);
 	for (int node = n; node >= 1; node--) {
 		for (auto &it : cost[node]) {
