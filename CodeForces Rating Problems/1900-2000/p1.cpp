@@ -1,7 +1,6 @@
 #pragma GCC optimize("O3")
 #include <bits/stdc++.h>
 #define int long long
-#define endl '\n'
 using namespace std;
 
 const int N = 4e5 + 5;
@@ -68,7 +67,7 @@ void solve() {
 		for (auto &it : cost[node]) {
 			int a = get(1, 2 * n, tin[it], tout[it], 1);
 			if (a != cnt) {
-				cout << it << endl;
+				cout << it << "\n";
 				return;
 			}
 		}
@@ -77,7 +76,7 @@ void solve() {
 			cnt++;
 		}
 	}
-	cout << 0 << endl;
+	cout << 0 << "\n";
 }
 main() {
 	ios::sync_with_stdio(false);
